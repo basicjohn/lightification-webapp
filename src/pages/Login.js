@@ -29,6 +29,44 @@ class Login extends Component {
     })
   };
 
+  render() {
+    let content = !!this.props.auth.isAuthenticated ?
+      (
+        <div>
+          <Redirect to={{ pathname: '/' }} />
+        </div>
+      ) :
+      (
+        <div>
+          <GoogleLogin
+            clientId={config.GOOGLE_CLIENT_ID}
+            buttonText="Google Login"
+            onSuccess={this.googleResponse}
+            onFailure={this.googleResponse}
+          />
+        </div>
+      );
 
-  
+      return (
+        <div><h1>Login</h1>
+          {content}
+        </div>
+      );
+  }
+};
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.auth
+  };
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login: (token) => {
+      dispatch(login(token));
+    }
+  };
+};
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
