@@ -19,14 +19,16 @@ class App extends Component {
         <TopNavigation />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
+          <Route path="/about" component={About} />
           <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
           <Route path="/profile" component={Profile} />
           <Route path="/logout" component={Logout} />
-          <Route path="/about" component={About} />
           <Route component={NotFound} />
         </Switch>
       </View>
     );
   }
 }
+
+export default App;
