@@ -1,9 +1,20 @@
 import 'react-native-gesture-handler';
 import { registerRootComponent } from 'expo';
 
+import './index.css';
 import App from './App';
+import { Provider } from 'react-redux';
+import store from "./store";
+import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
+
+ReactDOM.render(
+  <Provider store={store}>
+      <Router>
+          <App />
+      </Router>
+  </Provider>,
+  document.getElementById('root'));
+registerServiceWorker();
 registerRootComponent(App);
