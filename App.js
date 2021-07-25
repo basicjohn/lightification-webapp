@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Route, Switch } from  "react-router-dom";
-import TopNavigation from "./components/TopNavigation";
+import TopNavigation from "./components/HeaderNav";
 import Home from "./src/pages/Home";
 import Login from "./src/pages/Login";
 import Register from "./src/pages/Register";
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor="rgba(0,0,0,0.2)" barStyle="light-content" />
-        <TopNavigation />
+        <HeaderNav />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />
