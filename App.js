@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Route, Switch } from  "react-router-dom";
-import TopNavigation from "./components/HeaderNav";
+import TopNavigation from "./src/components/HeaderNav";
 import Home from "./src/pages/Home";
 import Login from "./src/pages/Login";
 import Register from "./src/pages/Register";

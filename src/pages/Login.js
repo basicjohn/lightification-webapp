@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { GoogleLogin } from 'react-google-login';
 import { connect } from 'react-redux';
-import { login } from '../../actions/authActions';
-import config from '../config.json';
+import { login } from './../actions/authActions';
+// import config from '../config.json';
 import { withRouter, Redirect } from 'react-router-dom';
 
 class Login extends Component {

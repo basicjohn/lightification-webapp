@@ -1,13 +1,20 @@
+import React from 'react'
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import 'react-native-gesture-handler';
 import { registerRootComponent } from 'expo';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+
+import App from './App';
 
 import './index.css';
-import App from './App';
-import { Provider } from 'react-redux';
-import store from "./store";
-import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter as Router } from 'react-router-dom';
+// import registerServiceWorker from './registerServiceWorker';
 
+const store = createStore(
+  reducer,
+  applyMiddleware(middlewareApi, thunkMiddleware)
+)
 
 ReactDOM.render(
   <Provider store={store}>
@@ -16,5 +23,4 @@ ReactDOM.render(
       </Router>
   </Provider>,
   document.getElementById('root'));
-registerServiceWorker();
 registerRootComponent(App);
