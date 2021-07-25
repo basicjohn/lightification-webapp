@@ -13,4 +13,4 @@ function HeaderNav(props) {
   )
 }
 
-export default Navbar;
+export default HeaderNav;
