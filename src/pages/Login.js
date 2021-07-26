@@ -44,6 +44,12 @@ class Login extends Component {
             onSuccess={this.googleResponse}
             onFailure={this.googleResponse}
           />
+          <HueLogin
+            clientId={config.HUE_CLIENT_ID}
+            buttonText="Philips Hue Login"
+            onSuccess={this.googleResponse}
+            onFailure={this.googleResponse}
+          />
         </div>
       );
 
