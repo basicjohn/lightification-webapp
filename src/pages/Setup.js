@@ -5,7 +5,7 @@ import SetupComplete from "../components/SetupComplete";
 
 function Setup(props) {
 
-  return;
+  return(null);
 }
 
 export default Setup;

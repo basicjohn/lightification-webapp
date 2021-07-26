@@ -29,7 +29,7 @@ class Login extends Component {
     })
   };
 
-  render() {  
+  render() {
     let content = !!this.props.auth.isAuthenticated ?
       (
         <div>
