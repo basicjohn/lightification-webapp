@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isAuthenticated: false
+      // isAuthenticated: false
     }
   }
 
@@ -23,7 +23,7 @@ class App extends Component {
     return (
       // <View style={styles.container}>
       <View>
-        <StatusBar backgroundColor="rgba(0,0,0,0.2)" barStyle="light-content" />
+        {/* <StatusBar backgroundColor="rgba(0,0,0,0.2)" barStyle="light-content" /> */}
         <HeaderNav />
         <Router>
           <Switch>
