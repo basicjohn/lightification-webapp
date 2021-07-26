@@ -1,6 +1,6 @@
 export function login(token) {
-  return dispath => {
-    dispath({
+  return dispatch => {
+    dispatch({
       type: "LOGIN",
       payload:token
     });
@@ -9,10 +9,13 @@ export function login(token) {
 
 export function logout() {
   console.log("Logging out");
-  return dispath => {
-    dispath({
+  return dispatch => {
+    dispatch({
       type: "LOGOUT",
       payload: ""
     });
   };
 }
+
+
+

@@ -1,6 +1,12 @@
+import React from "react";
+
 function Home(props) {
 
-  return(null);
+  return(
+    <div className="container">
+      <h1>testing</h1>
+    </div>
+  );
 }
 
 export default Home;
