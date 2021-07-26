@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import App from './App';
-import middlewareApi from './middleware/middleware-api';
+import middlewareApi from './src/middleware/middleware-api';
 import thunkMiddleware from 'redux-thunk';
 
 import 'bootstrap/dist/css/bootstrap.css';

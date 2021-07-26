@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { GoogleLogin } from 'react-google-login';
-import { connect } from 'react-redux';
-import { login } from './../actions/authActions';
+import { connect } from "react-redux";
+import { login } from "../actions/authActions";
 import config from '../config.json';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter, Redirect } from "react-router-dom";
+
 
 class Login extends Component {
 
@@ -14,7 +15,7 @@ class Login extends Component {
   googleResponse = (response) => {
     console.log(response);
     if (!response.tokenId) {
-      console.error("Unable to retrieve toeknId from Google", response)
+      console.error("Unable to get tokenId from Google", response)
       return;
     }
 
@@ -24,22 +25,24 @@ class Login extends Component {
       body: tokenBlob,
       mode: 'cors',
       cache: 'default'
-  };
-  fetch(config.GOOGLE_AUTH_CALLBACK_URL, options)
-    .then(r => {
-      r.json().then(user => {
-        const token = user.token;
-        console.log(token);
-        this.props.login(token);
-      });
-    })
+    };
+    fetch(config.GOOGLE_AUTH_CALLBACK_URL, options)
+      .then(r => {
+        r.json().then(user => {
+          const token = user.token;
+          console.log(token);
+          this.props.login(token);
+        });
+      })
   };
 
   render() {
     let content = !!this.props.auth.isAuthenticated ?
       (
         <div>
-          <Redirect to={{ pathname: '/' }} />
+          <Redirect to={{
+            pathname: '/'
+          }} />
         </div>
       ) :
       (
@@ -50,20 +53,14 @@ class Login extends Component {
             onSuccess={this.googleResponse}
             onFailure={this.googleResponse}
           />
-          {/* <HueLogin
-            clientId={config.HUE_CLIENT_ID}
-            buttonText="Philips Hue Permissions"
-            onSuccess={this.HueResponse}
-            onFailure={this.HueResponse}
-          /> */}
         </div>
       );
 
-      return (
-        <div><h1>Login</h1>
+    return (
+      <div><h1>Login</h1>
           {content}
-        </div>
-      );
+      </div>
+    );
   }
 };
 
@@ -71,14 +68,14 @@ const mapStateToProps = (state) => {
   return {
     auth: state.auth
   };
-}
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     login: (token) => {
       dispatch(login(token));
     }
-  };
+  }
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Login));
