@@ -29,7 +29,7 @@ class Login extends Component {
     })
   };
 
-  render() {
+  render() {  
     let content = !!this.props.auth.isAuthenticated ?
       (
         <div>
@@ -44,12 +44,12 @@ class Login extends Component {
             onSuccess={this.googleResponse}
             onFailure={this.googleResponse}
           />
-          <HueLogin
+          {/* <HueLogin
             clientId={config.HUE_CLIENT_ID}
-            buttonText="Philips Hue Login"
-            onSuccess={this.googleResponse}
-            onFailure={this.googleResponse}
-          />
+            buttonText="Philips Hue Permissions"
+            onSuccess={this.HueResponse}
+            onFailure={this.HueResponse}
+          /> */}
         </div>
       );
 
