@@ -7,12 +7,14 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import App from './App';
+import middlewareApi from './src/middleware/middleware-api';
+import thunkMiddleware from 'redux-thunk';
 
 import './index.css';
 // import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(
-  reducer,
+  // reducer,
   applyMiddleware(middlewareApi, thunkMiddleware)
 )
 
