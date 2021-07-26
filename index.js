@@ -10,6 +10,7 @@ import App from './App';
 import middlewareApi from './src/middleware/middleware-api';
 import thunkMiddleware from 'redux-thunk';
 
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 // import registerServiceWorker from './registerServiceWorker';
 

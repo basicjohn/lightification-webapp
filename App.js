@@ -12,6 +12,12 @@ import About from "./src/pages/About";
 import NotFound from "./src/pages/NotFound";
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+    }
+  }
+
   render() {
     return (
       // <View style={styles.container}>
