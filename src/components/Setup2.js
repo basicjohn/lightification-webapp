@@ -1,6 +1,7 @@
 // Page that lists all available Lights for you to choose from.
 // import env from './../config.json'
 import React, { Component } from 'react';
+import { propTypes } from 'prop-types';
 
 class Setup2 extends Component {
   constructor(props) {
@@ -40,9 +41,19 @@ class Setup2 extends Component {
       .then(
         (jsonifiedResponse) => {
           console.log(jsonifiedResponse);
+          let arr = [];
+          for (const [key, object] of Object.entries(jsonifiedResponse)) {
+            let nestedArr = [];
+            nestedArr.push(parseInt(key));
+            nestedArr.push(object.name);
+            nestedArr.push(object.productname);
+            nestedArr.push(object.type);
+            arr.push(nestedArr);
+          }
+          console.log(arr);
           this.setState({
             isLoaded: true,
-            lights: jsonifiedResponse
+            lights: arr
           });
         })
         .catch((error) => {
@@ -72,9 +83,22 @@ class Setup2 extends Component {
   //       });
   // }
 
+
+
   componentDidMount() {
     this.getAllLightsInfo()
   }
+
+
+  convertLightsToArray = () => {
+    const { lights } = this.state;
+    for (const [key, value] of Object.entries(lights)) {
+      console.log(`${key}: ${value}`);
+    }
+  }
+  // propTypes: {
+  //   lights: React.PropTypes.array.isRequired
+  // }
 
   render() {
     const { error, isLoaded, lights } = this.state;
@@ -89,9 +113,9 @@ class Setup2 extends Component {
           <ul>
             {lights.map((light, index) =>
               <li key={index}>
-                <h3>{light.name}</h3>
-                <h4>{light.productname}</h4>
-                <h5>{light.type}</h5>
+                <h3>{light[1]}</h3>
+                <h4>{light[2]}</h4>
+                <h5>{light[3]}</h5>
                 <button>Select Light</button>
               </li>
     )}
@@ -101,5 +125,7 @@ class Setup2 extends Component {
     }
   }
 }
+
+
 
 export default Setup2;
