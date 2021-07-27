@@ -15,33 +15,34 @@ class Setup2 extends Component {
     };
   }
 
-  getHubUsername = () => {
-    fetch(`https://${this.state.hubIp}/api/newdeveloper`)
-      .then(response => response.json())
-      .then(
-        (jsonifiedResponse) => {
-          this.setState({
-            isLoaded: true,
-            username: jsonifiedResponse.results[0].success[0].username
-          });
-        })
-        .catch((error) => {
-          this.setState({
-            isLoaded: true,
-            error 
-          });
-        });
-  }
+  // getHubUsername = () => {
+  //   fetch(`https://${this.state.hubIp}/api/newdeveloper`)
+  //     .then(response => response.json())
+  //     .then(
+  //       (jsonifiedResponse) => {
+  //         this.setState({
+  //           isLoaded: true,
+  //           username: jsonifiedResponse.results[0].success[0].username
+  //         });
+  //       })
+  //       .catch((error) => {
+  //         this.setState({
+  //           isLoaded: true,
+  //           error 
+  //         });
+  //       });
+  // }
 
 
   getAllLightsInfo = () => {
-    fetch(`https://${this.state.hubIp}/api/${this.state.username}/lights`)
+    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights`)
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
+          console.log(jsonifiedResponse);
           this.setState({
             isLoaded: true,
-            selectedLight: jsonifiedResponse.results[0].success[0].username
+            lights: jsonifiedResponse
           });
         })
         .catch((error) => {
@@ -53,27 +54,28 @@ class Setup2 extends Component {
   }
 
 
-  getSelectedLightInfo = () => {
-    fetch(`https://${this.state.hubIp}/api/${this.state.username}/lights`)
-      .then(response => response.json())
-      .then(
-        (jsonifiedResponse) => {
-          this.setState({
-            isLoaded: true,
-            username: jsonifiedResponse.results[0].success[0].username
-          });
-        })
-        .catch((error) => {
-          this.setState({
-            isLoaded: true,
-            error 
-          });
-        });
-  }
+  // getSelectedLightInfo = () => {
+  //   fetch(`https://${this.state.hubIp}/api/${this.state.username}/lights`)
+  //     .then(response => response.json())
+  //     .then(
+  //       (jsonifiedResponse) => {
+  //         this.setState({
+  //           isLoaded: true,
+  //           username: jsonifiedResponse.results[0].success[0].username
+  //         });
+  //       })
+  //       .catch((error) => {
+  //         this.setState({
+  //           isLoaded: true,
+  //           error 
+  //         });
+  //       });
+  // }
 
   componentDidMount() {
     this.getAllLightsInfo()
   }
+
   render() {
     const { error, isLoaded, lights } = this.state;
     if (error) {
@@ -86,13 +88,13 @@ class Setup2 extends Component {
           <h1>All Lights</h1>
           <ul>
             {lights.map((light, index) =>
-              <li key={light[index].key}>
+              <li key={index}>
                 <h3>{light.name}</h3>
                 <h4>{light.productname}</h4>
                 <h5>{light.type}</h5>
                 <button>Select Light</button>
               </li>
-            )}
+    )}
           </ul>
         </React.Fragment>
       );

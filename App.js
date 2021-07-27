@@ -44,6 +44,7 @@ import Home from "./src/pages/Home";
 import Login from "./src/pages/Login";
 // import Register from "./src/pages/Register";
 import Profile from "./src/pages/Profile";
+import Setup from "./src/pages/Setup";
 import Logout from "./src/pages/Logout";
 import About from "./src/pages/About";
 import NotFound from "./src/pages/NotFound";
@@ -73,6 +74,7 @@ class App extends Component {
               {/* <Route path="/register" component={Register} /> */}
               <Route path="/login" component={Login} />
               <Route path="/profile" component={Profile} />
+              <Route path="/setup" component={Setup} />
               <Route path="/logout" component={Logout} />
               <Route component={NotFound} />
             </Switch>
