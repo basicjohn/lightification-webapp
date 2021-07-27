@@ -27,4 +27,29 @@
 //   }
 // }
 
+
 // export default makeApiGetCall
+
+
+  postSelectedLightTest = (lightId) => {
+    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${lightId}/state`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "on": true,
+        "bri": 254,
+        "transitiontime": 0
+      })
+    })
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {
+        console.log(jsonifiedResponse);
+      })
+    .catch((error) => {
+      console.log(error);
+    });
+  }
