@@ -53,6 +53,8 @@ buck-out/
 .expo/
 web-build/
 
-# Config files
-config.json
+# sensitive documentation
+hubDocumentation.txt
+appsettings.json
 config.js
+config.json
