@@ -52,7 +52,10 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      // isAuthenticated: false
+      error: null,
+      isLoaded: false,
+      selectedLight: null,
+      lights: []
     }
   }
 
