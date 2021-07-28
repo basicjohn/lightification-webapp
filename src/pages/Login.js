@@ -37,6 +37,7 @@ class Login extends Component {
   };
 
   render() {
+    console.log(this.props.auth);
     let content = !!this.props.auth.isAuthenticated ?
       (
         <div>

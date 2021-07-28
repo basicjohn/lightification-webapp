@@ -1,5 +1,9 @@
 .jumbotron {
   text-align: right;
+  background-image: url(./../images/homeSlider3.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 45px 30px 45px 30px;
 }
 
 main .jumbotron h1 {
@@ -11,6 +15,7 @@ main .jumbotron h1 {
 }
 
 .features {
+  padding: 20px;
 }
 
 .features h4,

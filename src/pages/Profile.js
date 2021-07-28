@@ -2,7 +2,10 @@ import React from "react";
 
 function Profile(props) {
 
-  return(null);
+  return(
+    <div className="profile">
+    </div>
+  );
 }
 
 export default Profile;

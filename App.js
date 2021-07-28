@@ -59,15 +59,15 @@ class App extends Component {
       error: null,
       isLoaded: false,
       selectedLight: null,
-      lights: [],
-      isAuthenticated: false
+      lights: []
     }
   }
 
+  
   render() {
     return (
         <div className="container">
-          <Header authentication={this.state.isAuthenticated}/>
+          <Header authentication={this.state.auth}/>
           <main>
             <Router>
               <Switch>
