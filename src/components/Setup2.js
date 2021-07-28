@@ -14,6 +14,7 @@ class Setup2 extends Component {
       selectedLight: null,
       lights: []
     };
+    this.alertSelectedLight = this.alertSelectedLight.bind(this);
   }
   
 
@@ -65,24 +66,34 @@ class Setup2 extends Component {
         });
     }
 
-
-  // getSelectedLightInfo = () => {
-  //   fetch(`https://${this.state.hubIp}/api/${this.state.username}/lights`)
-  //     .then(response => response.json())
-  //     .then(
-  //       (jsonifiedResponse) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           username: jsonifiedResponse.results[0].success[0].username
-  //         });
-  //       })
-  //       .catch((error) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error 
-  //         });
-  //       });
-  // }
+    alertSelectedLight = (lightId) => {
+      fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${lightId}/state`, {
+        method: 'PUT',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "on": true,
+          "alert": "select"
+        })
+      })
+      .then(response => response.json())
+      .then(
+        (jsonifiedResponse) => {
+          console.log(jsonifiedResponse);
+          this.setState({
+            isLoaded: true,
+          });
+        })
+        .catch((error) => {
+          this.setState({
+            isLoaded: true,
+            error 
+          });
+        }
+      );
+    }
 
 
 
@@ -109,19 +120,26 @@ class Setup2 extends Component {
       return <React.Fragment>Loading...</React.Fragment>;
     } else {
       return (
-        <React.Fragment>
-          <h1>All Lights</h1>
-          <ul>
+        <div className="row">
+            <div className="col-md-6">
+              <h1>Step 2</h1>
+              <h2></h2>
+              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Turn Light On</button>
+              <button className="btn btn-primary" onClick={this.turnSelectedLightOff}>Turn Light Off</button>
+            </div>
+            <div className="col-md-6">
+            <h1>All Lights</h1>
+
             {lights.map((light, index) =>
-              <li key={index}>
+              <div className="col-md-6" key={index}>
                 <h3>{light[1]}</h3>
                 <h4>{light[2]}</h4>
                 <h5>{light[3]}</h5>
-                <button>Select Light</button>
-              </li>
-    )}
-          </ul>
-        </React.Fragment>
+                <button className="btn btn-primary" onClick={(e) => this.alertSelectedLight(light[0], e)}>Choose Light</button>
+              </div>
+            )}
+          </div>
+        </div>
       );
     }
   }

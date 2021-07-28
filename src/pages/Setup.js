@@ -17,7 +17,7 @@ class Setup extends Component {
   render() {
     return (
     <div>
-      <Setup3 />
+      <Setup2 />
     </div>);
   };
 
