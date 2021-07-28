@@ -1,18 +1,12 @@
 // Page to get Philips Hue Permissions from meethue.com
 import React, { Component } from 'react';
 import { propTypes } from 'prop-types';
+import { useSelector } from 'react-redux';
 
-class Setup1 extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: false,
-      hubIp: '192.168.86.168',
-      username: 'GdKr5N2NQtBnaknaysdCMHNwTojvh7wcHuMG0Yy2',
-      selectedLight: 19
-    };
-  }
+
+function Setup1(props) {
+  
+  const profileSettings = useSelector((state) => state.baseInfo);
 
   // getHubUsername = () => {
   //   fetch(`https://${this.state.hubIp}/api/newdeveloper`)
@@ -34,7 +28,7 @@ class Setup1 extends Component {
 
 
   getAllLightsInfo = () => {
-    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights`)
+    fetch(`http://${profileSettings.hubIp}/api/${profileSettings.username}/lights`)
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
@@ -83,23 +77,22 @@ class Setup1 extends Component {
 
 
 
-  componentDidMount() {
-    this.getAllLightsInfo()
-  }
+
+    getAllLightsInfo()
 
 
-  convertLightsToArray = () => {
-    const { lights } = this.state;
-    for (const [key, value] of Object.entries(lights)) {
-      console.log(`${key}: ${value}`);
-    }
-  }
+  // convertLightsToArray = () => {
+  //   const { lights } = this.state;
+  //   for (const [key, value] of Object.entries(lights)) {
+  //     console.log(`${key}: ${value}`);
+  //   }
+  // }
   // propTypes: {
   //   lights: React.PropTypes.array.isRequired
   // }
 
-  render() {
-    const { error, isLoaded, lights } = this.state;
+
+    const { error, isLoaded, lights } = profileSettings;
     if (error) {
       return <React.Fragment>Error: {error.message}</React.Fragment>;
     } else if (!isLoaded) {
@@ -121,7 +114,6 @@ class Setup1 extends Component {
         </div>
       );
     }
-  }
 }
 
 

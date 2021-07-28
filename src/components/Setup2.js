@@ -15,6 +15,7 @@ class Setup2 extends Component {
       lights: []
     };
   }
+  
 
   // getHubUsername = () => {
   //   fetch(`https://${this.state.hubIp}/api/newdeveloper`)
@@ -85,7 +86,7 @@ class Setup2 extends Component {
 
 
 
-  componentDidMount() {
+  componentWillMount() {
     this.getAllLightsInfo()
   }
 

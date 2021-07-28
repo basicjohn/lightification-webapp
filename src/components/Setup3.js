@@ -2,6 +2,7 @@
 // import env from './../config.json'
 import React, { Component } from 'react';
 import { propTypes } from 'prop-types';
+import { useSelector } from 'react-redux';
 
 class Setup3 extends Component {
   constructor(props) {

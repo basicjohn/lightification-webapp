@@ -81,7 +81,7 @@ class App extends Component {
                 <Route path="/about" component={About} />
                 <Route path="/login" component={Login} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/setup" component={Setup} />
+                <Route path="/setup" component={Setup} profileSettings={this.state} />
                 <Route path="/logout" component={Logout} />
                 <Route component={NotFound} />
               </Switch>
