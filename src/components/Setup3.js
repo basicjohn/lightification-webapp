@@ -13,10 +13,14 @@ class Setup3 extends Component {
       hubIp: '192.168.86.168',
       username: 'GdKr5N2NQtBnaknaysdCMHNwTojvh7wcHuMG0Yy2',
       selectedLight: 19
+
     };
+    this.turnSelectedLightOn = this.turnSelectedLightOn.bind(this);
+    this.turnSelectedLightOff = this.turnSelectedLightOff.bind(this);
+
   }
 
-  TurnSelectedLightOn = () => {
+  turnSelectedLightOn = () => {
     fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}/state`, {
       method: 'PUT',
       headers: {
@@ -25,8 +29,8 @@ class Setup3 extends Component {
       },
       body: JSON.stringify({
         "on": true,
-        "bri": 254,
-        "transitiontime": 0
+        "bri": 100,
+        "transitiontime": 5
       })
     })
     .then(response => response.json())
@@ -46,7 +50,7 @@ class Setup3 extends Component {
     );
   }
 
-  TurnSelectedLightOff = () => {
+  turnSelectedLightOff = () => {
     fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}/state`, {
       method: 'PUT',
       headers: {
@@ -82,19 +86,9 @@ class Setup3 extends Component {
       .then(
         (jsonifiedResponse) => {
           console.log(jsonifiedResponse);
-          let arr = [];
-          for (const [key, object] of Object.entries(jsonifiedResponse)) {
-            let nestedArr = [];
-            nestedArr.push(parseInt(key));
-            nestedArr.push(object.name);
-            nestedArr.push(object.productname);
-            nestedArr.push(object.type);
-            arr.push(nestedArr);
-          }
-          console.log(arr);
           this.setState({
             isLoaded: true,
-            lights: arr
+            lights: jsonifiedResponse
           });
         })
         .catch((error) => {
@@ -139,15 +133,17 @@ class Setup3 extends Component {
             </div>
             <div className="col-md-6">
               <h1>All Lights</h1>
-              <ul>
+
               <form onSubmit={this.handleSubmit}>
                 <label>
-                  Name:
-                  <input type="text" value={this.state.value} onChange={this.handleChange} />
-                </label>
+                  <input type="radio"  name="schedule" value="workDay" />
+                During the work day</label><br />
+                <input type="radio" name="fav_language" value="CSS" />
+                <label for="css">CSS</label><br />
+                <input type="radio" name="fav_language" value="JavaScript" />
+                <label for="javascript">JavaScript</label>
                 <input type="submit" value="Submit" />
               </form>
-              </ul>
             </div>
         </div>
       );
