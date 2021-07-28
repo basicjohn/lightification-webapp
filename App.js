@@ -39,6 +39,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Route, Switch, BrowserRouter as Router } from  "react-router-dom";
+import { connect } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from "./src/components/Header";
@@ -59,11 +60,16 @@ class App extends Component {
       error: null,
       isLoaded: false,
       selectedLight: null,
-      lights: []
+      lights: [],
+      error: null,
+      isLoaded: false,
+      hubIp: '192.168.86.168',
+      username: 'GdKr5N2NQtBnaknaysdCMHNwTojvh7wcHuMG0Yy2',
+      selectedLight: 19
     }
   }
 
-  
+
   render() {
     return (
         <div className="container">
@@ -86,5 +92,11 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return {
+    baseInfo: state
+  };
+};
 
-export default App;
+export default connect(mapStateToProps)(App);
+// export default App;

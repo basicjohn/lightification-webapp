@@ -106,7 +106,7 @@ class Setup1 extends Component {
       return <React.Fragment>Loading...</React.Fragment>;
     } else {
       return (
-        <React.Fragment>
+          <div className="row">
           <h1>All Lights</h1>
           <ul>
             {lights.map((light, index) =>
@@ -116,9 +116,9 @@ class Setup1 extends Component {
                 <h5>{light[3]}</h5>
                 <button>Select Light</button>
               </li>
-    )}
+            )}
           </ul>
-        </React.Fragment>
+        </div>
       );
     }
   }

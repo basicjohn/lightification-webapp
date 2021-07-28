@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 import HeaderNav from './HeaderNav';
 import './Header.css';
 
@@ -9,7 +9,7 @@ function Header(props) {
   return (
       <header className="header flex-row">
         <div className="container">
-          <h1><img className="logo" src="" alt="logo" />Lightification</h1>
+          <h1><Link to='/about'><img className="logo" src="" alt="logo" />Lightification</Link></h1>
           <HeaderNav authentication={props}/>
         </div>
       </header>
