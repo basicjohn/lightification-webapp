@@ -39,7 +39,10 @@ import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Route, Switch, BrowserRouter as Router } from  "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Header from "./src/components/Header";
+import Footer from "./src/components/Footer";
 import Home from "./src/pages/Home";
 import Login from "./src/pages/Login";
 // import Register from "./src/pages/Register";
@@ -48,7 +51,6 @@ import Setup from "./src/pages/Setup";
 import Logout from "./src/pages/Logout";
 import About from "./src/pages/About";
 import NotFound from "./src/pages/NotFound";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   constructor(props) {
@@ -63,24 +65,22 @@ class App extends Component {
 
   render() {
     return (
-      // <View style={styles.container}>
-        /* <StatusBar backgroundColor="rgba(0,0,0,0.2)" barStyle="light-content" /> */
         <div className="container">
-        <Header />
-        <main>
-          <Router>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              {/* <Route path="/register" component={Register} /> */}
-              <Route path="/login" component={Login} />
-              <Route path="/profile" component={Profile} />
-              <Route path="/setup" component={Setup} />
-              <Route path="/logout" component={Logout} />
-              <Route component={NotFound} />
-            </Switch>
-          </Router>
-        </main>
+          <Header />
+          <main>
+            <Router>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/login" component={Login} />
+                <Route path="/profile" component={Profile} />
+                <Route path="/setup" component={Setup} />
+                <Route path="/logout" component={Logout} />
+                <Route component={NotFound} />
+              </Switch>
+            </Router>
+          </main>
+          <Footer />
         </div>
     );
   }

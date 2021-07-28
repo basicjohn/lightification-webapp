@@ -5,13 +5,13 @@ import 'react-native-gesture-handler';
 import { registerRootComponent } from 'expo';
 import { Provider } from 'react-redux';
 import store from "./src/store";
-
 import App from './App';
-// import middlewareApi from './src/middleware/middleware-api';
-import thunkMiddleware from 'redux-thunk';
-
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
+
+// import middlewareApi from './src/middleware/middleware-api';
+// import thunkMiddleware from 'redux-thunk';
+
 import registerServiceWorker from './src/registerServiceWorker';
 
 
