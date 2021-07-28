@@ -12,26 +12,26 @@ function Home(props) {
         <h3>Distract Less</h3>
         <button>Get Started</button>
       </div>
-      <div className="row">
+      <div className="row features">
         <div className="col-md-12">
           <h4>Features</h4>
         </div>
         <div className="col-md-6">
-          <div className="col-md-12">
+          <div className="col-md-12 feature">
             <img src="" alt="" />
             <p>Connect to your Philips Hue Bridge locally or connect to the Hue website to setup remote scheduling</p>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12 feature">
             <img src="" alt="" />
             <p>Connect to your Philips Hue Bridge locally or connect to the Hue website to setup remote scheduling</p>
           </div>
         </div>
         <div className="col-md-6">
-          <div className="col-md-12">
+          <div className="col-md-12 feature">
             <img src="" alt="" />
             <p>With a variety of notification options </p>
           </div>
-          <div className="col-md-12">
+          <div className="col-md-12 feature">
             <img src="" alt="" />
             <p>Connect to your Philips Hue Bridge locally or connect to the Hue website to setup remote scheduling</p>
           </div>

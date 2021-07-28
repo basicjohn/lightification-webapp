@@ -1,0 +1,28 @@
+/* Header styles */
+header,
+.header {
+  padding: 0;
+  margin: 0;
+}
+
+header .container {
+  background-color: #fff;
+  height: 80px;
+  color: #323232;
+  /* top: 0px; */
+  /* position: relative; */
+  padding: 0;
+  margin: 0;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  display: inline;
+  line-height: 80px;
+}
+
+.logo {
+  float: left;
+  margin-right: 10px;
+}

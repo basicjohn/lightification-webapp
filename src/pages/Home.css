@@ -1,3 +1,19 @@
-.jumbotron h1 {
+.jumbotron {
   text-align: right;
+}
+
+main .jumbotron h1 {
+  text-align: right;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  display: block;
+  line-height: 80px;
+}
+
+.features {
+}
+
+.features h4,
+.features .feature {
+  text-align: center;
 }

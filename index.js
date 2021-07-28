@@ -5,6 +5,7 @@ import 'react-native-gesture-handler';
 import { registerRootComponent } from 'expo';
 import { Provider } from 'react-redux';
 import store from "./src/store";
+import './cssReset.css';
 import App from './App';
 // import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
