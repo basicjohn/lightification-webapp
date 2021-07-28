@@ -16,9 +16,9 @@ class Setup3 extends Component {
     };
   }
 
-  postSelectedLightTest = (lightId) => {
-    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${lightId}/state`, {
-      method: 'POST',
+  TurnSelectedLightOn = () => {
+    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}/state`, {
+      method: 'PUT',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -35,7 +35,6 @@ class Setup3 extends Component {
         console.log(jsonifiedResponse);
         this.setState({
           isLoaded: true,
-          lights: arr
         });
       })
       .catch((error) => {
@@ -47,8 +46,38 @@ class Setup3 extends Component {
     );
   }
 
-  getAllLightsInfo = () => {
-    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights`)
+  TurnSelectedLightOff = () => {
+    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}/state`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "on": false,
+        "bri": 0,
+        "transitiontime": 0
+      })
+    })
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {
+        console.log(jsonifiedResponse);
+        this.setState({
+          isLoaded: true,
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          isLoaded: true,
+          error 
+        });
+      }
+    );
+  }
+
+  getSelectedLightInfo() {
+    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}`)
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
@@ -77,19 +106,20 @@ class Setup3 extends Component {
     }
 
 
+
+
   componentDidMount() {
-    this.postSelectedLightTest()
+    this.getSelectedLightInfo()
   }
 
 
-  convertLightsToArray = () => {
-    const { lights } = this.state;
-    for (const [key, value] of Object.entries(lights)) {
-      console.log(`${key}: ${value}`);
-    }
+  handleChange(event) {
+    this.setState({value: event.target.value});
   }
-  propTypes: {
-    lights: React.PropTypes.array.isRequired
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
   }
 
   render() {
@@ -101,25 +131,24 @@ class Setup3 extends Component {
     } else {
       return (
         <div className="row">
-          <div className="col-md-12">
             <div className="col-md-6">
               <h1>Step 3</h1>
               <h2></h2>
+              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Turn Light On</button>
+              <button className="btn btn-primary" onClick={this.turnSelectedLightOff}>Turn Light Off</button>
             </div>
             <div className="col-md-6">
               <h1>All Lights</h1>
               <ul>
-                {lights.map((light, index) =>
-                  <li key={index}>
-                    <h3>{light[1]}</h3>
-                    <h4>{light[2]}</h4>
-                    <h5>{light[3]}</h5>
-                    <button>Select Light</button>
-                  </li>
-                )}
+              <form onSubmit={this.handleSubmit}>
+                <label>
+                  Name:
+                  <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </label>
+                <input type="submit" value="Submit" />
+              </form>
               </ul>
             </div>
-          </div>
         </div>
       );
     }
