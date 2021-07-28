@@ -63,7 +63,7 @@ class Setup2 extends Component {
             error 
           });
         });
-  }
+    }
 
 
   // getSelectedLightInfo = () => {
@@ -86,7 +86,7 @@ class Setup2 extends Component {
 
 
 
-  componentWillMount() {
+  componentDidMount() {
     this.getAllLightsInfo()
   }
 

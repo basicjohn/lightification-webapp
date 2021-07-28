@@ -2,7 +2,7 @@
 // import env from './../config.json'
 import React, { Component } from 'react';
 import { propTypes } from 'prop-types';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 class Setup3 extends Component {
   constructor(props) {
@@ -33,15 +33,52 @@ class Setup3 extends Component {
     .then(
       (jsonifiedResponse) => {
         console.log(jsonifiedResponse);
+        this.setState({
+          isLoaded: true,
+          lights: arr
+        });
       })
-    .catch((error) => {
-      console.log(error);
-    });
+      .catch((error) => {
+        this.setState({
+          isLoaded: true,
+          error 
+        });
+      }
+    );
   }
+
+  getAllLightsInfo = () => {
+    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights`)
+      .then(response => response.json())
+      .then(
+        (jsonifiedResponse) => {
+          console.log(jsonifiedResponse);
+          let arr = [];
+          for (const [key, object] of Object.entries(jsonifiedResponse)) {
+            let nestedArr = [];
+            nestedArr.push(parseInt(key));
+            nestedArr.push(object.name);
+            nestedArr.push(object.productname);
+            nestedArr.push(object.type);
+            arr.push(nestedArr);
+          }
+          console.log(arr);
+          this.setState({
+            isLoaded: true,
+            lights: arr
+          });
+        })
+        .catch((error) => {
+          this.setState({
+            isLoaded: true,
+            error 
+          });
+        });
+    }
 
 
   componentDidMount() {
-    this.getAllLightsInfo()
+    this.postSelectedLightTest()
   }
 
 
@@ -51,9 +88,9 @@ class Setup3 extends Component {
       console.log(`${key}: ${value}`);
     }
   }
-  // propTypes: {
-  //   lights: React.PropTypes.array.isRequired
-  // }
+  propTypes: {
+    lights: React.PropTypes.array.isRequired
+  }
 
   render() {
     const { error, isLoaded, lights } = this.state;
@@ -63,19 +100,27 @@ class Setup3 extends Component {
       return <React.Fragment>Loading...</React.Fragment>;
     } else {
       return (
-        <React.Fragment>
-          <h1>All Lights</h1>
-          <ul>
-            {lights.map((light, index) =>
-              <li key={index}>
-                <h3>{light[1]}</h3>
-                <h4>{light[2]}</h4>
-                <h5>{light[3]}</h5>
-                <button>Select Light</button>
-              </li>
-    )}
-          </ul>
-        </React.Fragment>
+        <div className="row">
+          <div className="col-md-12">
+            <div className="col-md-6">
+              <h1>Step 3</h1>
+              <h2></h2>
+            </div>
+            <div className="col-md-6">
+              <h1>All Lights</h1>
+              <ul>
+                {lights.map((light, index) =>
+                  <li key={index}>
+                    <h3>{light[1]}</h3>
+                    <h4>{light[2]}</h4>
+                    <h5>{light[3]}</h5>
+                    <button>Select Light</button>
+                  </li>
+                )}
+              </ul>
+            </div>
+          </div>
+        </div>
       );
     }
   }
