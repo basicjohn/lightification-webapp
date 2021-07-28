@@ -15,73 +15,28 @@ class Setup3 extends Component {
     };
   }
 
-  // getHubUsername = () => {
-  //   fetch(`https://${this.state.hubIp}/api/newdeveloper`)
-  //     .then(response => response.json())
-  //     .then(
-  //       (jsonifiedResponse) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           username: jsonifiedResponse.results[0].success[0].username
-  //         });
-  //       })
-  //       .catch((error) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error 
-  //         });
-  //       });
-  // }
-
-
-  getAllLightsInfo = () => {
-    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights`)
-      .then(response => response.json())
-      .then(
-        (jsonifiedResponse) => {
-          console.log(jsonifiedResponse);
-          let arr = [];
-          for (const [key, object] of Object.entries(jsonifiedResponse)) {
-            let nestedArr = [];
-            nestedArr.push(parseInt(key));
-            nestedArr.push(object.name);
-            nestedArr.push(object.productname);
-            nestedArr.push(object.type);
-            arr.push(nestedArr);
-          }
-          console.log(arr);
-          this.setState({
-            isLoaded: true,
-            lights: arr
-          });
-        })
-        .catch((error) => {
-          this.setState({
-            isLoaded: true,
-            error 
-          });
-        });
+  postSelectedLightTest = (lightId) => {
+    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${lightId}/state`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "on": true,
+        "bri": 254,
+        "transitiontime": 0
+      })
+    })
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {
+        console.log(jsonifiedResponse);
+      })
+    .catch((error) => {
+      console.log(error);
+    });
   }
-
-
-  // getSelectedLightInfo = () => {
-  //   fetch(`https://${this.state.hubIp}/api/${this.state.username}/lights`)
-  //     .then(response => response.json())
-  //     .then(
-  //       (jsonifiedResponse) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           username: jsonifiedResponse.results[0].success[0].username
-  //         });
-  //       })
-  //       .catch((error) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error 
-  //         });
-  //       });
-  // }
-
 
 
   componentDidMount() {

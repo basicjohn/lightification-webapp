@@ -4,11 +4,12 @@ import HeaderNav from './HeaderNav';
 
 function Header(props) {
   return (
-    <header>
-      <img src={props.logo} alt="logo" />
-      <HeaderNav />
-    </header>
-  )
-}
+      <header className="header flex-row">
+        <div className="container">
+          <h1><img className="logo" src="" alt="logo" />Lightification</h1>
+          <HeaderNav />
+        </div>
+      </header>
+  )}
 
 export default Header;

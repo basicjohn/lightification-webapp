@@ -48,6 +48,7 @@ import Setup from "./src/pages/Setup";
 import Logout from "./src/pages/Logout";
 import About from "./src/pages/About";
 import NotFound from "./src/pages/NotFound";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   constructor(props) {
@@ -63,10 +64,10 @@ class App extends Component {
   render() {
     return (
       // <View style={styles.container}>
-      <div>
-        {/* <StatusBar backgroundColor="rgba(0,0,0,0.2)" barStyle="light-content" /> */}
+        /* <StatusBar backgroundColor="rgba(0,0,0,0.2)" barStyle="light-content" /> */
+        <div className="container">
         <Header />
-        <main role="main" className="container">
+        <main>
           <Router>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -80,7 +81,7 @@ class App extends Component {
             </Switch>
           </Router>
         </main>
-      </div>
+        </div>
     );
   }
 }
