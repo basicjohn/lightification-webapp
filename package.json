@@ -17,6 +17,7 @@
     "react-bootstrap": "^1.6.1",
     "react-dom": "16.13.1",
     "react-google-login": "^5.2.2",
+    "react-icons": "^4.2.0",
     "react-native": "~0.63.4",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-reanimated": "~2.2.0",

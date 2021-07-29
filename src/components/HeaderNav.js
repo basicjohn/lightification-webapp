@@ -16,7 +16,6 @@ function HeaderNav(props) {
           <Link to='/about' className="navbar-brand">About</Link>
           <Link to='/profile' className="navbar-brand">Profile</Link>
           <Link to='/logout' className="navbar-brand">Logout</Link>
-          <Link to='/login' className="navbar-brand">Sign Up / Login</Link> {/* Temp */}
 
           <span className="navbar-brand">Welcome Back!</span>
       </nav>
@@ -26,8 +25,6 @@ function HeaderNav(props) {
         <nav className="navbar navbar-default">
             <Link to='/'  className="navbar-brand">Home</Link>
             <Link to='/about' className="navbar-brand">About</Link>
-            <Link to='/profile' className="navbar-brand">Profile</Link> {/* Temp */}
-            <Link to='/logout' className="navbar-brand">Logout</Link>  {/* Temp */}
             <Link to='/login' className="navbar-brand">Sign Up / Login</Link>
         </nav>
       )

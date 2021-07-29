@@ -6,23 +6,29 @@
   padding: 150px 30px 150px 30px;
 }
 
-main .jumbotron h1 {
-  text-align: center;
-  font-size: 1.5rem;
-  text-transform: capitalize;
-  display: block;
-  line-height: 25px;
-  margin-bottom: 20px;
-}
 main .jumbotron h1,
 main .jumbotron h2,
 main .jumbotron h3 {
   color: #fff;
   font-weight: bold;
 }
+main .jumbotron h1 {
+  width: 45%;
+  color: rgb(255, 255, 255);
+  font-size: 1.7rem;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 25px;
+  display: block;
+  background-color: #32323215;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+  padding: 10px;
+}
 main .jumbotron h1 span {
   color: #fdfdfd;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 main .jumbotron h2 {
   font-size: 2rem;
@@ -31,19 +37,37 @@ main .jumbotron h3 {
   font-size: 1.2rem;
 }
 
-main .jumbotron button {
+/* main .jumbotron button {
   margin-top: 20px;
+} */
+
+main .jumbotron a.btn.btn-primary {
+  background-color: #fdfdfd;
+  border-color: #fdfdfd;
+  margin-top: 20px;
+  font-weight: 600;
+  color: #323232;
 }
 
 .features {
   padding: 75px 30px 75px 30px;
 }
 
-.features h4,
-.features .feature {
+.features .row .feature p {
+  font-size: 1.5rem;
   text-align: center;
 }
 
+.features .row .col-md-6.feature div {
+  color: #323232;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.features .feature div svg {
+  color: #323232 !important;
+}
 .features h4 {
+  text-align: center;
   font-weight: bold;
 }
