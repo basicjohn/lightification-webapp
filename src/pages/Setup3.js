@@ -124,13 +124,13 @@ class Setup3 extends Component {
     } else {
       return (
         <div className="row">
-            <div className="col-md-6 setup3-side">
+            <div className="col-md-6 setup3-side1">
               <h1>Step 3</h1>
               <h2></h2>
               <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Test Notification</button>
               <button className="btn btn-primary" onClick={this.turnSelectedLightOff}>Turn Light Off</button>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 setup3-side2">
               <h1>All Lights</h1>
 
               <form onSubmit={this.handleSubmit}>
