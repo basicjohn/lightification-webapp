@@ -17,7 +17,7 @@ function Footer() {
           <h2>Resources</h2>
           <ul>
             <li>
-              <a href="https://meethue.com">Philips Hue</a><br />
+              <a href="https://meethue.com">Philips Hue</a>
             </li>
             <li>
               <a href="https://unsplash.com/">unSplash</a>
@@ -28,7 +28,7 @@ function Footer() {
           <h2>About</h2>
           <ul>
             <li>
-              <a href="https://meethue.com">Philips Hue</a><br />
+              <a href="https://meethue.com">Philips Hue</a>
             </li>
             <li>
               <a href="https://unsplash.com/">unSplash</a>

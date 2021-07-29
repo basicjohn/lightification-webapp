@@ -1,8 +1,8 @@
-header .brand {
+/* footer .brand {
   padding: 0px 40px;
   display: inline;
   line-height: 80px;
-}
+} */
 
 footer .brand a {
   text-transform: capitalize;
@@ -16,4 +16,17 @@ footer .recognition {
   margin-top: 25px;
   text-align: center;
   font-weight: 700;
+}
+
+footer h2 {
+  font-size: 1rem;
+}
+
+footer ul {
+  list-style-type: disc;
+}
+
+footer ul li a {
+  color: #323232;
+  text-decoration: none;
 }

@@ -1,5 +1,5 @@
 .setup3-side1 {
-  background-image: url("../images/lampOnSideTable.jpg");
+  background-image: url("../images/lampInKitchen.jpg");
   background-size: cover;
 }
 
@@ -28,19 +28,10 @@
   font-weight: bold;
 }
 
-.setup3-side2 h3 {
+.setup3-side2 h4 {
   font-size: 1em;
   font-weight: bold;
-}
-
-.setup3-side2 h4 {
-  font-size: 0.6em;
-  font-weight: bold;
-}
-
-.setup3-side2 h5 {
-  font-size: 0.5em;
-  font-weight: bold;
+  margin-top: 30px;
 }
 
 .setup3-side2 .col-md-6 {
@@ -57,10 +48,11 @@
   margin: 0.5rem;
 }
 
-.setup3-side2 .col-md-6 button {
+.setup3-side2 button {
   width: 100%;
   background-color: #323232;
   border-color: #323232;
+  margin-top: 30px;
   font-weight: 600;
 }
 
