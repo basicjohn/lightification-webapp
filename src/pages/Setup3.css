@@ -48,7 +48,8 @@
   margin: 0.5rem;
 }
 
-.setup3-side2 button {
+.setup3-side2 button,
+.setup3-side2 .btn.btn-primary {
   width: 100%;
   background-color: #323232;
   border-color: #323232;

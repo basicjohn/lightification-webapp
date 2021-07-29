@@ -1,6 +1,8 @@
 // Page that lists all available Lights for you to choose from.
 // import env from './../config.json'
 import React, { Component } from 'react';
+import { Link, BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
+
 import './Setup1.css';
 
 // import { propTypes } from 'prop-types';
@@ -81,6 +83,10 @@ class Setup1 extends Component {
                   <button type="submit">Submit</button>
                 </form>
               </div>
+              
+              <hr />
+              <Link type='button' to='/setup2' className="btn btn-primary">Next Step</Link>
+
           </div>
         </div>
       );

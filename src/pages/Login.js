@@ -42,7 +42,7 @@ class Login extends Component {
       (
         <div>
           <Redirect to={{
-            pathname: '/'
+            pathname: '/setup1'
           }} />
         </div>
       ) :

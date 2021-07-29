@@ -1,6 +1,7 @@
 // Page that lists all available Lights for you to choose from.
 // import env from './../config.json'
 import React, { Component } from 'react';
+import { Link, BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
 // import { propTypes } from 'prop-types';
 import './Setup3.css';
 // import { useSelector } from 'react-redux';
@@ -17,6 +18,9 @@ class Setup3 extends Component {
 
     };
     this.turnSelectedLightOn = this.turnSelectedLightOn.bind(this);
+    this.notificationType1 = this.notificationType1.bind(this);
+    this.notificationType2 = this.notificationType2.bind(this);
+    this.notificationType3 = this.notificationType3.bind(this);
     this.turnSelectedLightOff = this.turnSelectedLightOff.bind(this);
 
   }
@@ -50,6 +54,116 @@ class Setup3 extends Component {
       }
     );
   }
+
+
+
+  notificationType1 = () => {
+    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}/state`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "on": true,
+        "bri": 5,
+        "transitiontime": 10
+      }),
+      // options: {timeout: 1000}
+    })
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {
+        console.log(jsonifiedResponse);
+        this.setState({
+          isLoaded: true,
+        });
+      })
+      .then(
+        fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}/state`, {
+          method: 'PUT',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            "on": true,
+            "bri": 200,
+            "transitiontime": 15
+          })
+        })
+      )
+        .catch((error) => {
+        this.setState({
+          isLoaded: true,
+          error 
+        });
+      }
+    );
+  }
+
+  notificationType2 = () => {
+    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}/state`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "on": true,
+        "bri": 100,
+        "transitiontime": 5
+      })
+    })
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {
+        console.log(jsonifiedResponse);
+        this.setState({
+          isLoaded: true,
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          isLoaded: true,
+          error 
+        });
+      }
+    );
+  }
+
+  notificationType3 = () => {
+    fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}/state`, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "on": true,
+        "bri": 100,
+        "transitiontime": 5
+      })
+    })
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {
+        console.log(jsonifiedResponse);
+        this.setState({
+          isLoaded: true,
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          isLoaded: true,
+          error 
+        });
+      }
+    );
+  }
+
+
+
 
   turnSelectedLightOff = () => {
     fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}/state`, {
@@ -127,9 +241,10 @@ class Setup3 extends Component {
             <div className="col-md-6 setup3-side1">
               <h1>Step 3</h1>
               <h2></h2>
-              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Test Notification 1</button>
-              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Test Notification 2</button>
-              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Test Notification 3</button>
+              <button className="btn btn-primary" onClick={this.notificationType1}>Test Notification 1</button>
+              <button className="btn btn-primary" onClick={this.notificationType2}>Test Notification 2</button>
+              <button className="btn btn-primary" onClick={this.notificationType3}>Test Notification 3</button>
+              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Turn Light On</button>
               <button className="btn btn-primary" onClick={this.turnSelectedLightOff}>Turn Light Off</button>
             </div>
             <div className="col-md-6 setup3-side2">
@@ -168,6 +283,9 @@ class Setup3 extends Component {
 
                 <button className="btn btn-primary" type="submit">Save Settings</button>
               </form>
+        <hr />
+              <Link type='button' to='/profile' className="btn btn-primary">Next Step</Link>
+
             </div>
         </div>
       );

@@ -31,8 +31,14 @@
 .setup1-side2 h3 {
   font-size: 1.8em;
   font-weight: bold;
+}
 
-  /* padding: 60px 30px; */
+.setup1-side2 a.btn.btn-primary {
+  width: 100%;
+  background-color: #323232;
+  border-color: #323232;
+  margin-top: 30px;
+  font-weight: 600;
 }
 
 .setup1-side2 .col-md-12 {

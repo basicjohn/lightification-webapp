@@ -64,6 +64,14 @@
   font-weight: 600;
 }
 
+.setup2-side2 a.btn.btn-primary {
+  width: 100%;
+  background-color: #323232;
+  border-color: #323232;
+  margin-top: 30px;
+  font-weight: 600;
+}
+
 .setup2-side2 .col-md-12 p {
   font-size: 0.8em;
   font-weight: 500;

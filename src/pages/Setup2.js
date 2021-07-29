@@ -1,6 +1,8 @@
 // Page that lists all available Lights for you to choose from.
 // import env from './../config.json'
 import React, { Component } from 'react';
+import { Link, BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
+
 // import { propTypes } from 'prop-types';
 import './Setup2.css';
 
@@ -140,6 +142,10 @@ class Setup2 extends Component {
                 <button className="btn btn-primary" onClick={(e) => this.alertSelectedLight(light[0], e)}>Choose Light</button>
               </div>
               )}
+              <br /><br />
+              <hr />
+              <Link type='button' to='/setup3' className="btn btn-primary">Next Step</Link>
+
             </div>
           </div>
         </div>
@@ -147,7 +153,5 @@ class Setup2 extends Component {
     }
   }
 }
-
-
 
 export default Setup2;
