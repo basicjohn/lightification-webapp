@@ -100,8 +100,6 @@ class Setup3 extends Component {
     }
 
 
-
-
   componentDidMount() {
     this.getSelectedLightInfo()
   }
@@ -128,20 +126,43 @@ class Setup3 extends Component {
             <div className="col-md-6">
               <h1>Step 3</h1>
               <h2></h2>
-              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Turn Light On</button>
+              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Test Notification</button>
               <button className="btn btn-primary" onClick={this.turnSelectedLightOff}>Turn Light Off</button>
             </div>
             <div className="col-md-6">
               <h1>All Lights</h1>
 
               <form onSubmit={this.handleSubmit}>
+                <h4>Schedule</h4>
+                <label>
+                <input type="radio"  name="schedule" value="workDay" />
+                  Work day (Clock-in, Lunch, and Clock-out)</label><br />
+                <label> 
+                  <input type="radio"  name="schedule" value="workDay" />
+                  Hourly (9am–5pm at the top of every hour)</label><br />
+
+                  <h4>Notification Type</h4>
+                  <label>
+                  <input type="radio"  name="schedule" value="workDay" />
+                    Just Right (aproximately 3s)</label><br />
+                    <label>
+                  <input type="radio"  name="schedule" value="workDay" />
+                    Slow and stead (aproximately 10s)</label><br />
+                <label> 
+                  <input type="radio"  name="schedule" value="workDay" />
+                  Blink and you'll miss it</label><br />
+
+                  <h4>Notification Brightness</h4>
                 <label>
                   <input type="radio"  name="schedule" value="workDay" />
-                During the work day</label><br />
-                <input type="radio" name="fav_language" value="CSS" />
-                <label for="css">CSS</label><br />
-                <input type="radio" name="fav_language" value="JavaScript" />
-                <label for="javascript">JavaScript</label>
+                    Dim</label><br />
+                    <label> 
+                  <input type="radio"  name="schedule" value="workDay" />
+                  Just Right</label><br />
+                  <label> 
+                  <input type="radio"  name="schedule" value="workDay" />
+                  Bright</label><br />
+
                 <input type="submit" value="Submit" />
               </form>
             </div>

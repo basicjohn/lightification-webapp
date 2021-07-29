@@ -16,10 +16,16 @@ header .container {
 }
 
 header h1 {
-  font-size: 1.5rem;
   text-transform: capitalize;
   display: inline;
   line-height: 80px;
+}
+
+header h1 a {
+  font-size: 2rem;
+  color: #323232;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .logo {

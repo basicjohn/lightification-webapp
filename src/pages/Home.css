@@ -1,17 +1,30 @@
 .jumbotron {
-  text-align: right;
+  text-align: center;
   background-image: url(./../images/homeSlider3.jpg);
   background-size: cover;
   background-position: center;
-  padding: 45px 30px 45px 30px;
+  padding: 150px 30px 150px 30px;
 }
 
 main .jumbotron h1 {
-  text-align: right;
+  text-align: center;
   font-size: 1.5rem;
   text-transform: capitalize;
   display: block;
-  line-height: 80px;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+main .jumbotron h1,
+main .jumbotron h2,
+main .jumbotron h3 {
+  color: #fff;
+  font-weight: bold;
+}
+main .jumbotron h2 {
+  font-size: 2rem;
+}
+main .jumbotron h3 {
+  font-size: 1.2rem;
 }
 
 .features {
@@ -21,4 +34,8 @@ main .jumbotron h1 {
 .features h4,
 .features .feature {
   text-align: center;
+}
+
+.features h4 {
+  font-weight: bold;
 }

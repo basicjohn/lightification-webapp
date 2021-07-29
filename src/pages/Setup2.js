@@ -124,12 +124,10 @@ class Setup2 extends Component {
         <div className="row">
             <div className="col-md-6">
               <h1>Step 2</h1>
-              <h2></h2>
-              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Turn Light On</button>
-              <button className="btn btn-primary" onClick={this.turnSelectedLightOff}>Turn Light Off</button>
+              <h2>Select a light connected to the bridge</h2>
             </div>
             <div className="col-md-6">
-            <h1>Select </h1>
+            <h1>Select a light</h1>
 
             {lights.map((light, index) =>
               <div className="col-md-6" key={index}>

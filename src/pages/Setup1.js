@@ -2,6 +2,7 @@
 // import env from './../config.json'
 import React, { Component } from 'react';
 import { propTypes } from 'prop-types';
+import { v4 } from 'uuid';
 
 class Setup1 extends Component {
   constructor(props) {
@@ -9,109 +10,73 @@ class Setup1 extends Component {
     this.state = {
       error: null,
       isLoaded: false,
-      hubIp: '192.168.86.168',
-      username: 'GdKr5N2NQtBnaknaysdCMHNwTojvh7wcHuMG0Yy2',
+      hubIp: '',
+      seedName: 'steve',
+      username: '',
       selectedLight: null,
-      lights: []
     };
     this.getHubUsername = this.getHubUsername.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
   
 
-  getHubUsername = () => {
-    fetch(`https://${this.state.hubIp}/api/newdeveloper`)
+  // getHubUsername = () => {
+  //   fetch(`https://${this.state.hubIp}/api/newdeveloper`)
+  //   .then(response => response.json())
+  //   .then(
+  //     (jsonifiedResponse) => {
+  //       this.setState({
+  //         isLoaded: true,
+  //         username: jsonifiedResponse.results[0].success[0].username
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       this.setState({
+  //         isLoaded: true,
+  //         error 
+  //       });
+  //     });
+  //   }
+    
+    getHubUsername = (e) => {
+      e.preventDefault();
+      // console.log(deviceInfo);
+      fetch(`http://${this.state.hubIp}/api`, {
+        method: 'POST',
+        body: JSON.stringify({
+          "devicetype": `my_hue_app#iphone ${this.state.seedName}`
+        })
+      })
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
+          console.log(jsonifiedResponse);
           this.setState({
             isLoaded: true,
-            username: jsonifiedResponse.results[0].success[0].username
+            username: jsonifiedResponse[0].success.username
           });
         })
         .catch((error) => {
+          console.log(error);
           this.setState({
             isLoaded: true,
-            error 
+            error
           });
-        });
+        }
+      );
   }
 
+  handleChange(event) {
+    console.log(event.target.value);
+    this.setState({hubIp: event.target.value});
+  }
 
-  // getAllLightsInfo = () => {
-  //   fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights`)
-  //     .then(response => response.json())
-  //     .then(
-  //       (jsonifiedResponse) => {
-  //         console.log(jsonifiedResponse);
-  //         let arr = [];
-  //         for (const [key, object] of Object.entries(jsonifiedResponse)) {
-  //           let nestedArr = [];
-  //           nestedArr.push(parseInt(key));
-  //           nestedArr.push(object.name);
-  //           nestedArr.push(object.productname);
-  //           nestedArr.push(object.type);
-  //           arr.push(nestedArr);
-  //         }
-  //         console.log(arr);
-  //         this.setState({
-  //           isLoaded: true,
-  //           lights: arr
-  //         });
-  //       })
-  //       .catch((error) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error 
-  //         });
-  //       });
-  //   }
-
-  //   alertSelectedLight = (lightId) => {
-  //     fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${lightId}/state`, {
-  //       method: 'PUT',
-  //       headers: {
-  //         'Accept': 'application/json',
-  //         'Content-Type': 'application/json'
-  //       },
-  //       body: JSON.stringify({
-  //         "on": true,
-  //         "alert": "select"
-  //       })
-  //     })
-  //     .then(response => response.json())
-  //     .then(
-  //       (jsonifiedResponse) => {
-  //         console.log(jsonifiedResponse);
-  //         this.setState({
-  //           isLoaded: true,
-  //           selectedLight: lightId
-  //         });
-  //       })
-  //       .catch((error) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error
-  //         });
-  //       }
-  //     );
-  //   }
-
-
-
-  // componentDidMount() {
-  //   this.getAllLightsInfo()
+  // handleSubmit(event) {
+  //   getHubUsername();
+  //   event.preventDefault();
   // }
 
-
-  // convertLightsToArray = () => {
-  //   const { lights } = this.state;
-  //   for (const [key, value] of Object.entries(lights)) {
-  //     console.log(`${key}: ${value}`);
-  //   }
-  // }
-  // propTypes: {
-  //   lights: React.PropTypes.array.isRequired
-  // }
 
   render() {
 
@@ -134,8 +99,8 @@ class Setup1 extends Component {
               <div className="col-md-12">
                 <h3>Third</h3>
                 <p>Submit the Local network bridge IP address. You may need to press the button on the bridge again if too much time has passed since you last pressed it.</p>
-                <form onSubmit={this.handleSubmit}>
-                  <input type="text" value="hubIp" />
+                <form onSubmit={this.getHubUsername}>
+                  <input type="text" value={this.state.value} onChange={this.handleChange} />
                   <button type="submit">Submit</button>
                 </form>
               </div>
@@ -146,3 +111,6 @@ class Setup1 extends Component {
   }
 }
 export default Setup1;
+
+
+// 192.168.86.168
