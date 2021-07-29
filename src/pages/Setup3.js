@@ -127,7 +127,9 @@ class Setup3 extends Component {
             <div className="col-md-6 setup3-side1">
               <h1>Step 3</h1>
               <h2></h2>
-              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Test Notification</button>
+              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Test Notification 1</button>
+              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Test Notification 2</button>
+              <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Test Notification 3</button>
               <button className="btn btn-primary" onClick={this.turnSelectedLightOff}>Turn Light Off</button>
             </div>
             <div className="col-md-6 setup3-side2">

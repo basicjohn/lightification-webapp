@@ -56,6 +56,15 @@
   font-weight: 600;
 }
 
+.setup3-side1 button {
+  color: #323232;
+  width: 50%;
+  background-color: #fdfdfd;
+  border-color: #fdfdfd;
+  margin: 30px 10px 0px 0;
+  font-weight: 600;
+}
+
 .setup3-side2 .col-md-12 p {
   font-size: 0.8em;
   font-weight: 500;
