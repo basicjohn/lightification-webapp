@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { render } from "react-dom";
 
-import Setup1 from "../components/Setup1";
-import Setup2 from "../components/Setup2";
-import Setup3 from "../components/Setup3";
+import Setup1 from "./Setup1";
+import Setup2 from "./Setup2";
+import Setup3 from "./Setup3";
 import SetupComplete from "../components/SetupComplete";
 
 

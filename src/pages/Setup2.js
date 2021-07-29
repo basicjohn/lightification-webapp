@@ -84,12 +84,13 @@ class Setup2 extends Component {
           console.log(jsonifiedResponse);
           this.setState({
             isLoaded: true,
+            selectedLight: lightId
           });
         })
         .catch((error) => {
           this.setState({
             isLoaded: true,
-            error 
+            error
           });
         }
       );
@@ -128,7 +129,7 @@ class Setup2 extends Component {
               <button className="btn btn-primary" onClick={this.turnSelectedLightOff}>Turn Light Off</button>
             </div>
             <div className="col-md-6">
-            <h1>All Lights</h1>
+            <h1>Select </h1>
 
             {lights.map((light, index) =>
               <div className="col-md-6" key={index}>

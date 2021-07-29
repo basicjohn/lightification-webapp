@@ -48,7 +48,10 @@ import Home from "./src/pages/Home";
 import Login from "./src/pages/Login";
 // import Register from "./src/pages/Register";
 import Profile from "./src/pages/Profile";
-import Setup from "./src/pages/Setup";
+import Setup1 from "./src/pages/Setup1";
+import Setup2 from "./src/pages/Setup2";
+import Setup3 from "./src/pages/Setup3";
+import SetupComplete from "./src/pages/SetupComplete";
 import Logout from "./src/pages/Logout";
 import About from "./src/pages/About";
 import NotFound from "./src/pages/NotFound";
@@ -81,7 +84,10 @@ class App extends Component {
                 <Route path="/about" component={About} />
                 <Route path="/login" component={Login} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/setup" component={Setup} profileSettings={this.state} />
+                <Route path="/setup1" component={Setup1} />
+                <Route path="/setup2" component={Setup2} />
+                <Route path="/setup3" component={Setup3} />
+                <Route path="/setupComplete" component={SetupComplete} />
                 <Route path="/logout" component={Logout} />
                 <Route component={NotFound} />
               </Switch>
