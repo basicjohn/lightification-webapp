@@ -124,21 +124,23 @@ class Setup2 extends Component {
     } else {
       return (
         <div className="row">
-            <div className="col-md-6 setup2-side">
+            <div className="col-md-6 setup2-side1">
               <h1>Step 2</h1>
               <h2>Select a light connected to the bridge</h2>
             </div>
-            <div className="col-md-6">
-            <h1>Select a light</h1>
-
-            {lights.map((light, index) =>
+            <div className="col-md-6 setup2-side2">
+            {/* <h1>Select a light</h1> */}
+            <div className="row">
+              {lights.map((light, index) =>
               <div className="col-md-6" key={index}>
                 <h3>{light[1]}</h3>
                 <h4>{light[2]}</h4>
                 <h5>{light[3]}</h5>
+                <hr />
                 <button className="btn btn-primary" onClick={(e) => this.alertSelectedLight(light[0], e)}>Choose Light</button>
               </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       );

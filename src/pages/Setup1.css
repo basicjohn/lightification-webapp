@@ -4,7 +4,7 @@
 }
 
 .setup1-side1 {
-  padding: 60px 30px 100px 30px;
+  padding: 60px 30px 600px 30px;
 }
 
 .setup1-side2 {
@@ -12,10 +12,44 @@
 }
 
 .setup1-side1 h1 {
-  color: #fff;
+  color: #323232;
   text-align: center;
-  display: inline;
   background-color: #fff;
   margin-left: auto;
   margin-right: auto;
+  font-weight: bold;
+}
+
+.setup1-side1 h2 {
+  color: #fff;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+}
+
+.setup1-side2 h3 {
+  font-size: 1.8em;
+  font-weight: bold;
+
+  /* padding: 60px 30px; */
+}
+
+.setup1-side2 .col-md-12 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 50px;
+  /* padding: 60px 30px; */
+}
+
+.setup1-side2 .col-md-12 p {
+  font-size: 0.8em;
+  font-weight: 500;
+  /* padding: 60px 30px; */
+}
+
+.setup1-side2 .col-md-12 input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 5px;
 }
