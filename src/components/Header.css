@@ -16,6 +16,7 @@ header .container {
 }
 
 header h1 {
+  padding: 0px 40px;
   text-transform: capitalize;
   display: inline;
   line-height: 80px;

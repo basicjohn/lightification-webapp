@@ -9,7 +9,7 @@ function Header(props) {
   return (
       <header className="header flex-row">
         <div className="container">
-          <h1><Link to='/about'><img className="logo" src="" alt="logo" />Lightification</Link></h1>
+          <h1><Link to='/about'>Lightification</Link></h1>
           <HeaderNav authentication={props}/>
         </div>
       </header>
