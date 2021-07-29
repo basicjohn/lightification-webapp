@@ -76,9 +76,9 @@ class App extends Component {
   render() {
     return (
         <div className="container">
+            <Router>
           <Header authentication={this.state.auth}/>
           <main>
-            <Router>
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/about" component={About} />
@@ -91,8 +91,8 @@ class App extends Component {
                 <Route path="/logout" component={Logout} />
                 <Route component={NotFound} />
               </Switch>
-            </Router>
           </main>
+            </Router>
           <Footer />
         </div>
     );
