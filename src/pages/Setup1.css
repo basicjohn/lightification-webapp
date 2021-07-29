@@ -1,0 +1,21 @@
+.setup1-side1 {
+  background-image: url("../images/ceilingLampWithChairs.jpg");
+  background-size: cover;
+}
+
+.setup1-side1 {
+  padding: 60px 30px 100px 30px;
+}
+
+.setup1-side2 {
+  padding: 60px 30px;
+}
+
+.setup1-side1 h1 {
+  color: #fff;
+  text-align: center;
+  display: inline;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}

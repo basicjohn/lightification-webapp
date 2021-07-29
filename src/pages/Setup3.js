@@ -1,7 +1,8 @@
 // Page that lists all available Lights for you to choose from.
 // import env from './../config.json'
 import React, { Component } from 'react';
-import { propTypes } from 'prop-types';
+// import { propTypes } from 'prop-types';
+import './Setup3.css';
 // import { useSelector } from 'react-redux';
 
 class Setup3 extends Component {
@@ -123,7 +124,7 @@ class Setup3 extends Component {
     } else {
       return (
         <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 setup3-side">
               <h1>Step 3</h1>
               <h2></h2>
               <button className="btn btn-primary" onClick={this.turnSelectedLightOn}>Test Notification</button>

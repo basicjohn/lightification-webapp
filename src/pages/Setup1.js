@@ -1,8 +1,10 @@
 // Page that lists all available Lights for you to choose from.
 // import env from './../config.json'
 import React, { Component } from 'react';
-import { propTypes } from 'prop-types';
-import { v4 } from 'uuid';
+import './Setup1.css';
+
+// import { propTypes } from 'prop-types';
+// import { v4 } from 'uuid';
 
 class Setup1 extends Component {
   constructor(props) {
@@ -19,26 +21,7 @@ class Setup1 extends Component {
     this.handleChange = this.handleChange.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
 
-  // getHubUsername = () => {
-  //   fetch(`https://${this.state.hubIp}/api/newdeveloper`)
-  //   .then(response => response.json())
-  //   .then(
-  //     (jsonifiedResponse) => {
-  //       this.setState({
-  //         isLoaded: true,
-  //         username: jsonifiedResponse.results[0].success[0].username
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       this.setState({
-  //         isLoaded: true,
-  //         error 
-  //       });
-  //     });
-  //   }
-    
     getHubUsername = (e) => {
       e.preventDefault();
       // console.log(deviceInfo);
@@ -72,21 +55,15 @@ class Setup1 extends Component {
     this.setState({hubIp: event.target.value});
   }
 
-  // handleSubmit(event) {
-  //   getHubUsername();
-  //   event.preventDefault();
-  // }
-
-
   render() {
 
       return (
         <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 setup1-side1">
               <h1>Step 1</h1>
               <h2>Connect to your Philips Hue Hub</h2>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 setup1-side2">
               <h1>Connect to your Hub</h1>
               <div className="col-md-12">
                 <h3>First</h3>
@@ -107,10 +84,6 @@ class Setup1 extends Component {
           </div>
         </div>
       );
-    
   }
 }
 export default Setup1;
-
-
-// 192.168.86.168

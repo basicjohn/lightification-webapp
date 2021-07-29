@@ -1,7 +1,9 @@
 // Page that lists all available Lights for you to choose from.
 // import env from './../config.json'
 import React, { Component } from 'react';
-import { propTypes } from 'prop-types';
+// import { propTypes } from 'prop-types';
+import './Setup2.css';
+
 
 class Setup2 extends Component {
   constructor(props) {
@@ -122,7 +124,7 @@ class Setup2 extends Component {
     } else {
       return (
         <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 setup2-side">
               <h1>Step 2</h1>
               <h2>Select a light connected to the bridge</h2>
             </div>
