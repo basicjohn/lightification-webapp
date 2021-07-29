@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import './Footer.css';
 
 
@@ -6,14 +8,33 @@ import './Footer.css';
 function Footer() {
   return (
     <footer>
+      <hr />
       <div className="row">
-        <div className="col-md-4">Lightification</div>
+        <div className="col-md-4">
+          <h1 className="brand"><Link to='/'>Lightification<br /><span>W/ Philips Hue</span></Link></h1>
+        </div>
         <div className="col-md-4">
           <h2>Resources</h2>
-          <a href="#">Philips Hue</a><br />
-          <a href="#">unSplash</a>
+          <ul>
+            <li>
+              <a href="https://meethue.com">Philips Hue</a><br />
+            </li>
+            <li>
+              <a href="https://unsplash.com/">unSplash</a>
+            </li>
+          </ul>
         </div>
-        <div className="col-md-4">Phasellus tellus ex, ultrices sit amet fermentum nec, auctor id mi. Aliquam metus metus, imperdiet vitae massa ut, pretium mattis neque. Mauris ultrices risus eu ante lacinia, sed posuere ipsum finibus. Nunc nisl turpis, vestibulum non arcu id, interdum sollicitudin magna. Pellentesque a lacus a orci scelerisque condimentum. Phasellus eu odio tempor, efficitur nibh eget, consequat dui.</div>
+        <div className="col-md-4">
+          <h2>About</h2>
+          <ul>
+            <li>
+              <a href="https://meethue.com">Philips Hue</a><br />
+            </li>
+            <li>
+              <a href="https://unsplash.com/">unSplash</a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="row">
         <div className="col-md-12">

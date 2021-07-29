@@ -20,6 +20,10 @@ main .jumbotron h3 {
   color: #fff;
   font-weight: bold;
 }
+main .jumbotron h1 span {
+  color: #fdfdfd;
+  font-size: 0.9rem;
+}
 main .jumbotron h2 {
   font-size: 2rem;
 }
@@ -27,8 +31,12 @@ main .jumbotron h3 {
   font-size: 1.2rem;
 }
 
+main .jumbotron button {
+  margin-top: 20px;
+}
+
 .features {
-  padding: 20px;
+  padding: 75px 30px 75px 30px;
 }
 
 .features h4,

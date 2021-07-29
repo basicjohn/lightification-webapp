@@ -1,3 +1,22 @@
+header .brand {
+  padding: 0px 40px;
+  display: inline;
+  line-height: 80px;
+}
+
+footer .brand a {
+  text-transform: capitalize;
+  font-size: 2rem;
+  color: #323232;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 footer .recognition {
+  margin-top: 25px;
   text-align: center;
+  font-weight: 700;
+}
+
+footer .recognition {
 }
