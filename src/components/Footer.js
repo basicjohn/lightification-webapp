@@ -11,6 +11,8 @@ function Footer() {
 
   const auth  = useSelector((state) => state.auth);
 
+
+
   if (auth.isAuthenticated) {
     return (
       <footer>
@@ -90,3 +92,5 @@ function Footer() {
     }
 }
 export default Footer;
+
+
