@@ -83,7 +83,6 @@ class Setup1 extends Component {
                   <button type="submit">Submit</button>
                 </form>
               </div>
-              
               <hr />
               <Link type='button' to='/setup2' className="btn btn-primary">Next Step</Link>
 

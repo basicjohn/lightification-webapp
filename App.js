@@ -42,19 +42,19 @@ import { Route, Switch, BrowserRouter as Router } from  "react-router-dom";
 import { connect } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Header from "./src/components/Header";
-import Footer from "./src/components/Footer";
-import Home from "./src/pages/Home";
+import Header from "./src/components/Header/Header";
+import Footer from "./src/components/Footer/Footer";
+import Home from "./src/pages/Home/Home";
 import Login from "./src/pages/Login";
 // import Register from "./src/pages/Register";
-import Profile from "./src/pages/Profile";
-import Setup1 from "./src/pages/Setup1";
-import Setup2 from "./src/pages/Setup2";
-import Setup3 from "./src/pages/Setup3";
-import SetupComplete from "./src/pages/SetupComplete";
+import Profile from "./src/pages/Profile/Profile";
+import Setup1 from "./src/pages/Boarding/Setup1";
+import Setup2 from "./src/pages/Boarding/Setup2";
+import Setup3 from "./src/pages/Boarding/Setup3";
+import SetupComplete from "./src/pages/Boarding/SetupComplete";
 import Logout from "./src/pages/Logout";
-import About from "./src/pages/About";
-import NotFound from "./src/pages/NotFound";
+import About from "./src/pages/About/About";
+import NotFound from "./src/pages/404/NotFound";
 
 class App extends Component {
   constructor(props) {

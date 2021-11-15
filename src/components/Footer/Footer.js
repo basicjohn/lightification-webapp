@@ -4,14 +4,9 @@ import { useSelector } from 'react-redux';
 
 import './Footer.css';
 
-
-
 function Footer() {
 
-
   const auth  = useSelector((state) => state.auth);
-
-
 
   if (auth.isAuthenticated) {
     return (
@@ -72,7 +67,7 @@ function Footer() {
             </ul>
           </div>
           <div className="col-md-4">
-            <h2>Links</h2>  
+            <h2>Links</h2>
         <ul>
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About</Link></li>

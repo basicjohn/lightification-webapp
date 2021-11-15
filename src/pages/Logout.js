@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { withRouter, Redirect } from "react-router-dom";
-import { logout } from "../actions/authActions";
+import { logout } from "../state-store/actions/authActions";
 
 class Logout extends Component {
     componentWillMount(){
@@ -26,7 +26,7 @@ const mapStateToProps = (state) => {
       auth: state.auth
     };
   };
-  
+
   const mapDispatchToProps = (dispatch) => {
     return {
       logout: () => {
@@ -34,5 +34,5 @@ const mapStateToProps = (state) => {
       }
     }
   };
-  
+
   export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Logout));
