@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import 'react-native-gesture-handler';
 import { registerRootComponent } from 'expo';
 import { Provider } from 'react-redux';
-import store from "./src/store";
+import store from "./src/state-store/store";
 import './cssReset.css';
 import App from './App';
 // import 'bootstrap/dist/css/bootstrap.css';
