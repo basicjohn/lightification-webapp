@@ -1,6 +1,6 @@
 .jumbotron {
   text-align: center;
-  background-image: url(./../images/homeSlider3.jpg);
+  background-image: url(./../../images/homeSlider3.jpg);
   background-size: cover;
   background-position: center;
   padding: 150px 30px 150px 30px;
