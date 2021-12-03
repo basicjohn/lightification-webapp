@@ -1,14 +1,18 @@
 import axios from "axios";
 
 class LightificationClient {
-  public static async get(endPoint: string): Promise<any>{
+  public static async put(endPoint: string): Promise<any>{
     const api = axios.create({
       baseURL: "http://${this.state.hubIp}/api/",
     });
     let output: any;
-
-
-
+    await api.get(endPoint)
+      .then((response) => {
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    return output;
   }
   // notificationType1 = () => {
   //   fetch(`http://${this.state.hubIp}/api/${this.state.username}/lights/${this.state.selectedLight}/state`, {
